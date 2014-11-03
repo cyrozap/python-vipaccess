@@ -21,7 +21,7 @@ reverse-engineered the VIP Access application.
 - [qrcode](https://pypi.python.org/pypi/qrcode/5.0.1)
 
 If you have `pip` installed on your system, you can install them with
-`pip install lxml oath PyCrypto qrcode`.
+`pip install lxml oath PyCrypto qrcode image`.
 
 ## Usage
 
