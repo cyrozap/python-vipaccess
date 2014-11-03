@@ -15,13 +15,14 @@ reverse-engineered the VIP Access application.
 ## Dependencies
 
 - Python 2.7
+- [image](https://pypi.python.org/pypi/image/1.3.3)
 - [lxml](https://pypi.python.org/pypi/lxml/3.4.0)
 - [oath](https://pypi.python.org/pypi/oath/1.2)
 - [PyCrypto](https://pypi.python.org/pypi/pycrypto/2.6.1)
 - [qrcode](https://pypi.python.org/pypi/qrcode/5.0.1)
 
 If you have `pip` installed on your system, you can install them with
-`pip install lxml oath PyCrypto qrcode image`.
+`pip install image lxml oath PyCrypto qrcode`.
 
 ## Usage
 
