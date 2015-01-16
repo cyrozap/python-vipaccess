@@ -70,7 +70,8 @@ REQUEST_TEMPLATE = '''<?xml version="1.0" encoding="UTF-8" ?>
 
 def generate_request(**request_parameters):
     '''Generate a token provisioning request.'''
-    request_parameters['timestamp'] = request_parameters.get('timestamp',
+    request_parameters['timestamp'] = request_parameters.get(
+        'timestamp',
         int(time.time())
         )
     request_parameters['token_model'] = request_parameters.get(
