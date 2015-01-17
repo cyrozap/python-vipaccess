@@ -20,7 +20,6 @@ import base64
 import binascii
 import hashlib
 import hmac
-import random
 import string
 import sys
 import time
@@ -29,6 +28,7 @@ import urllib
 import qrcode
 import requests
 from Crypto.Cipher import AES
+from Crypto.Random import random
 from lxml import etree
 from oath import totp
 
