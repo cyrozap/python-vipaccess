@@ -1,5 +1,7 @@
 # python-vipaccess
 
+[![Build Status](https://travis-ci.org/cyrozap/python-vipaccess.svg?branch=master)](https://travis-ci.org/cyrozap/python-vipaccess)
+
 python-vipaccess is a free and open source software (FOSS) implementation of
 Symantec's VIP Access client. It is able to generate OATH URIs and their
 corresponding QR codes so any TOTP-generating application can be used as a VIP
