@@ -1,0 +1,10 @@
+language: python
+
+python:
+  - "2.7"
+
+install:
+  - "pip install image lxml oath PyCrypto qrcode requests"
+
+script:
+  - "python vipaccess.py"
