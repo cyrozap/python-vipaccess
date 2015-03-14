@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 #   Copyright 2014 Forest Crossman
@@ -253,8 +252,7 @@ def check_token(token_id, secret):
     else:
         return False
 
-
-if __name__ == "__main__":
+def main():
     request = generate_request()
 
     response = requests.post(PROVISIONING_URL, data=request)

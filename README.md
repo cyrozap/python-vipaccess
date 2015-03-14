@@ -27,9 +27,18 @@ reverse-engineered the VIP Access application.
 If you have `pip` installed on your system, you can install them with
 `pip install image lxml oath PyCrypto qrcode requests`.
 
+## Installation
+
+1. Check out this repository by running
+   `git clone https://github.com/cyrozap/python-vipaccess.git`
+2. Switch to the `python-vipaccess` directory by running `cd python-vipaccess`
+3. Install the `vipaccess` module
+   - With pip: `pip install .`
+   - Without pip: `python setup.py install`
+
 ## Usage
 
-You can run the program with `python vipaccess.py`. 
+Execute `vipaccess` (it should be in your `PATH`).
 
 
 [1]: http://www.cyrozap.com/2014/09/29/reversing-the-symantec-vip-access-provisioning-protocol/
