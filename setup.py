@@ -1,4 +1,4 @@
-from setuptools import setup 
+from setuptools import setup
 from codecs import open
 
 setup(
@@ -33,4 +33,5 @@ setup(
             'vipaccess=vipaccess.utils:main',
         ],
     },
+    test_suite='nose.collector',
 )
