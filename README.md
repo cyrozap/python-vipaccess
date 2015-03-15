@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/cyrozap/python-vipaccess.svg?branch=master)](https://travis-ci.org/cyrozap/python-vipaccess)
 [![Coverage Status](https://coveralls.io/repos/cyrozap/python-vipaccess/badge.svg?branch=master)](https://coveralls.io/r/cyrozap/python-vipaccess?branch=master)
+[![Apache 2.0 License](http://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 python-vipaccess is a free and open source software (FOSS) implementation of
 Symantec's VIP Access client. It is able to generate OATH URIs and their
