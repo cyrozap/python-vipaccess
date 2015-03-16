@@ -38,6 +38,7 @@ Installation
 2. Switch to the ``python-vipaccess`` directory by running
    ``cd python-vipaccess``
 3. Install the ``vipaccess`` module
+
    -  With pip: ``pip install .``
    -  Without pip: ``python setup.py install``
 
