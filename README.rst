@@ -33,6 +33,14 @@ If you have ``pip`` installed on your system, you can install them with
 Installation
 ------------
 
+Via pip (recommended)
+~~~~~~~~~~~~~~~~~~~~~
+
+``pip install python-vipaccess``
+
+Manual
+~~~~~~
+
 1. Check out this repository by running
    ``git clone https://github.com/cyrozap/python-vipaccess.git``
 2. Switch to the ``python-vipaccess`` directory by running
