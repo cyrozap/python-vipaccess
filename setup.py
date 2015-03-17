@@ -1,10 +1,14 @@
 from setuptools import setup
 from codecs import open
 
+with open('README.rst') as f:
+    readme = f.read()
+
 setup(
     name='python-vipaccess',
     version='0.1.0',
     description="A free software implementation of Symantec's VIP Access application and protocol",
+    long_description=readme,
     url='https://github.com/cyrozap/python-vipaccess',
     author='Forest Crossman',
     author_email='cyrozap@gmail.com',
