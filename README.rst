@@ -1,7 +1,7 @@
 python-vipaccess
 ================
 
-|Build Status| |Coverage Status| |Apache 2.0 License|
+|PyPI| |Apache 2.0 License| |Build Status| |Coverage Status|
 
 python-vipaccess is a free and open source software (FOSS)
 implementation of Symantec's VIP Access client. It is able to generate
@@ -55,9 +55,11 @@ Usage
 
 Execute ``vipaccess`` (it should be in your ``PATH``).
 
+.. |PyPI| image:: https://img.shields.io/pypi/v/python-vipaccess.svg
+   :target: https://pypi.python.org/pypi/python-vipaccess
+.. |Apache 2.0 License| image:: http://img.shields.io/badge/license-Apache--2.0-blue.svg
+   :target: https://www.apache.org/licenses/LICENSE-2.0.html
 .. |Build Status| image:: https://travis-ci.org/cyrozap/python-vipaccess.svg?branch=master
    :target: https://travis-ci.org/cyrozap/python-vipaccess
 .. |Coverage Status| image:: https://coveralls.io/repos/cyrozap/python-vipaccess/badge.svg?branch=master
    :target: https://coveralls.io/r/cyrozap/python-vipaccess?branch=master
-.. |Apache 2.0 License| image:: http://img.shields.io/badge/license-Apache--2.0-blue.svg
-   :target: https://www.apache.org/licenses/LICENSE-2.0.html
