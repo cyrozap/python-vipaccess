@@ -20,7 +20,7 @@ deploy:
   provider: pypi
   user: cyrozap
   password:
-    secure: EEe4tGqY6g6stH9p3uFc4vYYH8IRKHR5ySLfxM2/boqwR3Q3BrbBqUmJFkq8X7Tsk8q3HYow0irA9GG6aLhY0S4ghP/Z7M4F80Wb6ZueT2md744bYwCBGhVdjQIouCLrxbWsoYrgnz8AC4SPuHQgjCAVsxgF3dy5JnNI2tRc90I=
+    secure: ksuSgb20onjR65wMxYbkQ2gK/P7xwShPMPXQ27an6j22L9d518HVE53/Vn/SvlKbYTd2fOVJHIFaKMfY562nIQAxYVvu9lKQUa4ziSBoLwOuVN9rmEkKrfn9A+jo3t84kRpSNSXgbkoQusu7yT76OvD6t29FT/dKrauVd/UBAsw=
   on:
     tags: true
     repo: cyrozap/python-vipaccess
