@@ -15,3 +15,12 @@ script:
 
 after_success:
   - coveralls
+
+deploy:
+  provider: pypi
+  user: cyrozap
+  password:
+    secure: EEe4tGqY6g6stH9p3uFc4vYYH8IRKHR5ySLfxM2/boqwR3Q3BrbBqUmJFkq8X7Tsk8q3HYow0irA9GG6aLhY0S4ghP/Z7M4F80Wb6ZueT2md744bYwCBGhVdjQIouCLrxbWsoYrgnz8AC4SPuHQgjCAVsxgF3dy5JnNI2tRc90I=
+  on:
+    tags: true
+    repo: cyrozap/python-vipaccess
