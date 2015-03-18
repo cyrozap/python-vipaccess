@@ -225,16 +225,20 @@ def generate_otp_uri(token_id, secret):
 
 def generate_qr_code(uri):
     '''Generate a QR code from the OTP URI.'''
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=10,
-        border=4
-        )
-    qr.add_data(uri)
-    qr.make(fit=True)
-    im = qr.make_image()
-    im.show()
+    try:
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4
+            )
+        qr.add_data(uri)
+        qr.make(fit=True)
+        im = qr.make_image()
+        im.show()
+        return True
+    except:
+        return False
 
 def check_token(token_id, secret):
     '''Check the validity of the generated token.'''

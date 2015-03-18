@@ -62,3 +62,7 @@ def test_generate_otp_uri():
     expected_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
     generated_uri = generate_otp_uri(test_id, test_secret)
     assert generated_uri == expected_uri
+
+def test_generate_qr_code():
+    test_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
+    assert generate_qr_code(test_uri)
