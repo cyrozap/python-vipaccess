@@ -6,7 +6,7 @@ with open('README.rst') as f:
 
 setup(
     name='python-vipaccess',
-    version='0.1.1',
+    version='0.1.2',
     description="A free software implementation of Symantec's VIP Access application and protocol",
     long_description=readme,
     url='https://github.com/cyrozap/python-vipaccess',

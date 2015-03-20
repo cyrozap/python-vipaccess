@@ -235,8 +235,7 @@ def generate_qr_code(uri):
         qr.add_data(uri)
         qr.make(fit=True)
         im = qr.make_image()
-        im.show()
-        return True
+        return im
     except:
         return False
 
@@ -272,4 +271,5 @@ def main():
     otp_uri = generate_otp_uri(otp_token['id'], otp_secret)
     print otp_uri
 
-    generate_qr_code(otp_uri)
+    image = generate_qr_code(otp_uri)
+    image.show()
