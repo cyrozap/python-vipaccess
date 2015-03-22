@@ -66,3 +66,16 @@ def test_generate_otp_uri():
 def test_generate_qr_code():
     test_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
     assert generate_qr_code(test_uri)
+
+def test_check_token_detects_valid_token():
+    test_request = generate_request()
+    test_response = requests.post(PROVISIONING_URL, data=test_request)
+    test_otp_token = get_token_from_response(test_response.content)
+    test_token_id = test_otp_token['id']
+    test_token_secret = decrypt_key(test_otp_token['iv'], test_otp_token['cipher'])
+    assert check_token(test_token_id, test_token_secret)
+
+def test_check_token_detects_invalid_token():
+    test_token_id = 'VSST26070843'
+    test_token_secret = 'ZqeD\xd9wg]"\x12\x1f7\xc7v6"\xf0\x13\\i'
+    assert not check_token(test_token_id, test_token_secret)
