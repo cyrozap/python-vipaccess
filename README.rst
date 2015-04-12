@@ -13,7 +13,7 @@ VIP Access provisioning protocol to work, but I might add support for
 the other features at some point in the future.
 
 You can see my original blog post
-`here <http://www.cyrozap.com/2014/09/29/reversing-the-symantec-vip-access-provisioning-protocol/>`__,
+`here <https://www.cyrozap.com/2014/09/29/reversing-the-symantec-vip-access-provisioning-protocol/>`__,
 in which I describe how I reverse-engineered the VIP Access application.
 
 Dependencies
