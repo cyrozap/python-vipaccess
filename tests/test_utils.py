@@ -14,7 +14,15 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+
+# Python 2/3 compatibility
+try:
+    import urllib.parse as urlparse
+except ImportError:
+    import urlparse
+
 from vipaccess.utils import *
+
 
 def test_generate_request():
     expected = '<?xml version="1.0" encoding="UTF-8" ?>\n<GetSharedSecret Id="1412030064" Version="2.0"\n    xmlns="http://www.verisign.com/2006/08/vipservice"\n    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n    <TokenModel>VSST</TokenModel>\n    <ActivationCode></ActivationCode>\n    <OtpAlgorithm type="HMAC-SHA1-TRUNC-6DIGITS"/>\n    <SharedSecretDeliveryMethod>HTTPS</SharedSecretDeliveryMethod>\n    <DeviceId>\n        <Manufacturer>Apple Inc.</Manufacturer>\n        <SerialNo>7QJR44Y54LK3</SerialNo>\n        <Model>MacBookPro10,1</Model>\n    </DeviceId>\n    <Extension extVersion="auth" xsi:type="vip:ProvisionInfoType"\n        xmlns:vip="http://www.verisign.com/2006/08/vipservice">\n        <AppHandle>iMac010200</AppHandle>\n        <ClientIDType>BOARDID</ClientIDType>\n        <ClientID>Mac-3E36319D3EA483BD</ClientID>\n        <DistChannel>Symantec</DistChannel>\n        <ClientInfo>\n            <os>MacBookPro10,1</os>\n            <platform>iMac</platform>\n        </ClientInfo>\n        <ClientTimestamp>1412030064</ClientTimestamp>\n        <Data>Y95GpBio35otwd2H/4TjrukR0AnG7VR/KJ7qxz5Y370=</Data>\n    </Extension>\n</GetSharedSecret>'
@@ -59,11 +67,15 @@ def test_decrypt_key():
 def test_generate_otp_uri():
     test_id = 'VSST26070843'
     test_secret = b'ZqeD\xd9wg]"\x12\x1f7\xc7v6"\xf0\x13\\i'
-    expected_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
-    generated_uri = generate_otp_uri(test_id, test_secret)
-    print(expected_uri, type(expected_uri))
-    print(generated_uri, type(generated_uri))
-    assert generated_uri == expected_uri
+    expected_uri = urlparse.urlparse('otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec')
+    expected_query = urlparse.parse_qs(expected_uri.query)
+    generated_uri = urlparse.urlparse(generate_otp_uri(test_id, test_secret))
+    generated_query = urlparse.parse_qs(generated_uri.query)
+    assert generated_uri.scheme == expected_uri.scheme
+    assert generated_uri.netloc == expected_uri.netloc
+    assert generated_uri.path == expected_uri.path
+    assert generated_query['secret'][0] == expected_query['secret'][0]
+    assert generated_query['issuer'][0] == expected_query['issuer'][0]
 
 def test_generate_qr_code():
     test_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
