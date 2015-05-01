@@ -217,10 +217,10 @@ def decrypt_key(token_iv, token_cipher):
 def generate_otp_uri(token_id, secret):
     '''Generate the OTP URI.'''
     token_parameters = {}
-    token_parameters['otp_type'] = urlparse.quote('totp')
-    token_parameters['app_name'] = urlparse.quote('VIP Access')
-    token_parameters['account_name'] = urlparse.quote(token_id)
-    token_parameters['parameters'] = urlparse.urlencode(
+    token_parameters['otp_type'] = urllib.quote('totp')
+    token_parameters['app_name'] = urllib.quote('VIP Access')
+    token_parameters['account_name'] = urllib.quote(token_id)
+    token_parameters['parameters'] = urllib.urlencode(
         dict(
             secret=base64.b32encode(secret).upper(),
             issuer='Symantec'
