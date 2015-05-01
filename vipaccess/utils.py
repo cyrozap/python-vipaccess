@@ -15,6 +15,8 @@
 #   limitations under the License.
 
 
+from __future__ import print_function
+
 import base64
 import binascii
 import hashlib
@@ -266,7 +268,7 @@ def main():
         sys.exit(1)
 
     otp_uri = generate_otp_uri(otp_token['id'], otp_secret)
-    print otp_uri
+    print(otp_uri)
 
     image = generate_qr_code(otp_uri)
     image.show()
