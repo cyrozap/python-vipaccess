@@ -132,11 +132,11 @@ def generate_request(**request_parameters):
         request_parameters['model']
         )
 
-    data_before_hmac = '%(timestamp)d%(timestamp)d%(client_id_type)s%(client_id)s%(dist_channel)s' % request_parameters
+    data_before_hmac = u'%(timestamp)d%(timestamp)d%(client_id_type)s%(client_id)s%(dist_channel)s' % request_parameters
     request_parameters['data'] = base64.b64encode(
         hmac.new(
             HMAC_KEY,
-            data_before_hmac,
+            data_before_hmac.encode('utf-8'),
             hashlib.sha256
             ).digest()
         )
