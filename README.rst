@@ -19,7 +19,7 @@ in which I describe how I reverse-engineered the VIP Access application.
 Dependencies
 ------------
 
--  Python 2.x
+-  Python 2.6, 2.7, 3.3, 3.4
 -  `image <https://pypi.python.org/pypi/image/1.3.3>`__
 -  `lxml <https://pypi.python.org/pypi/lxml/3.4.0>`__
 -  `oath <https://pypi.python.org/pypi/oath/1.2>`__
