@@ -26,9 +26,9 @@ import sys
 import time
 # Python 2/3 compatibility
 try:
-    from urllib.parse import urlparse
+    import urllib.parse as urllib
 except ImportError:
-    import urllib as urlparse
+    import urllib
 
 import qrcode
 import requests
