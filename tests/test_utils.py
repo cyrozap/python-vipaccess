@@ -74,6 +74,7 @@ def test_generate_otp_uri():
     assert generated_uri.scheme == expected_uri.scheme
     assert generated_uri.netloc == expected_uri.netloc
     assert generated_uri.path == expected_uri.path
+    print(generated_query, expected_query)
     assert generated_query['secret'][0] == expected_query['secret'][0]
     assert generated_query['issuer'][0] == expected_query['issuer'][0]
 
