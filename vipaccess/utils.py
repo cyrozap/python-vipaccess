@@ -247,7 +247,7 @@ def generate_qr_code(uri):
 
 def check_token(token_id, secret):
     '''Check the validity of the generated token.'''
-    otp = totp(binascii.b2a_hex(secret))
+    otp = totp(binascii.b2a_hex(secret).encode('utf-8'))
     test_url = 'https://idprotect.vip.symantec.com/testtoken.v'
     token_check = requests.post(
         test_url,
