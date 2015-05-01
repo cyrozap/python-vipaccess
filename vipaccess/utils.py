@@ -279,3 +279,5 @@ def main():
 
     image = generate_qr_code(otp_uri)
     image.show()
+
+    return True
