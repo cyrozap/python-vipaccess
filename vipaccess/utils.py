@@ -139,7 +139,7 @@ def generate_request(**request_parameters):
             data_before_hmac.encode('utf-8'),
             hashlib.sha256
             ).digest()
-        )
+        ).decode('utf-8')
 
     return REQUEST_TEMPLATE % request_parameters
 
