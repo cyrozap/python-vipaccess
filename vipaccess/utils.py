@@ -28,7 +28,7 @@ import time
 try:
     from urllib.parse import urlparse
 except ImportError:
-    from urlparse import urlparse
+    import urllib as urlparse
 
 import qrcode
 import requests
