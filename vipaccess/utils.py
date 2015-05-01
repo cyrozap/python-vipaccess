@@ -209,7 +209,10 @@ def decrypt_key(token_iv, token_cipher):
     decrypted = decryptor.decrypt(token_cipher)
 
     # "decrypted" has PKCS#7 padding on it, so we need to remove that
-    num_bytes = ord(decrypted[-1])
+    if type(decrypted[-1]) != int:
+        num_bytes = ord(decrypted[-1])
+    else:
+        num_bytes = decrypted[-1]
     otp_key = decrypted[:-num_bytes]
 
     return otp_key
