@@ -68,15 +68,12 @@ def test_generate_otp_uri():
     test_id = 'VSST26070843'
     test_secret = b'ZqeD\xd9wg]"\x12\x1f7\xc7v6"\xf0\x13\\i'
     expected_uri = urlparse.urlparse('otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec')
-    expected_query = urlparse.parse_qs(expected_uri.query)
     generated_uri = urlparse.urlparse(generate_otp_uri(test_id, test_secret))
-    generated_query = urlparse.parse_qs(generated_uri.query)
     assert generated_uri.scheme == expected_uri.scheme
     assert generated_uri.netloc == expected_uri.netloc
     assert generated_uri.path == expected_uri.path
-    print(generated_query, expected_query)
-    assert generated_query['secret'][0] == expected_query['secret'][0]
-    assert generated_query['issuer'][0] == expected_query['issuer'][0]
+    assert urlparse.parse_qs(generated_uri.params) == urlparse.parse_qs(expected_uri.params)
+    assert urlparse.parse_qs(generated_uri.query) == urlparse.parse_qs(expected_uri.query)
 
 def test_generate_qr_code():
     test_uri = 'otpauth://totp/VIP%20Access:VSST26070843?secret=LJYWKRGZO5TV2IQSD434O5RWELYBGXDJ&issuer=Symantec'
