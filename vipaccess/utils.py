@@ -143,6 +143,9 @@ def generate_request(**request_parameters):
 
     return REQUEST_TEMPLATE % request_parameters
 
+def get_provisioning_response(request):
+    return requests.post(PROVISIONING_URL, data=request)
+
 def get_token_from_response(response_xml):
     '''Retrieve relevant token details from Symantec's provisioning
     response.'''
@@ -264,7 +267,7 @@ def check_token(token_id, secret):
 def main():
     request = generate_request()
 
-    response = requests.post(PROVISIONING_URL, data=request)
+    response = get_provisioning_response(request)
 
     otp_token = get_token_from_response(response.content)
 
