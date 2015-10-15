@@ -190,6 +190,8 @@ def get_token_from_response(response_xml):
         device = container.xpath('//vipservice:Device', namespaces=namespace)[0]
         secret = device.xpath('//vipservice:Secret', namespaces=namespace)[0]
         data = secret.xpath('//vipservice:Data', namespaces=namespace)[0]
+        expiry = secret.xpath('//vipservice:Expiry', namespaces=namespace)[0]
+
         token['id'] = secret.attrib['Id']
         token['cipher'] = base64.b64decode(
             data.xpath(
@@ -203,6 +205,7 @@ def get_token_from_response(response_xml):
                 namespaces=namespace
                 )[0].text
             )
+        token['expiry'] = expiry.text
 
         return token
 
@@ -279,6 +282,7 @@ def main():
 
     otp_uri = generate_otp_uri(otp_token['id'], otp_secret)
     print(otp_uri)
+    print("BE AWARE that this new credential expires on this date: " + otp_token['expiry'])
 
     image = generate_qr_code(otp_uri)
     image.show()

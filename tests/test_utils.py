@@ -53,6 +53,7 @@ def test_get_token_from_response():
         'id': 'VSST26070843',
         'cipher': b' \xb0px\xe0\x84:\x83\x01,\x90\x11\xce\x87\x94"[\xb4\xfb\x99\xbaoy!fX\xdd\xe5\xda3\x01\x19',
         'digest': b'2\x86\xa2un\xd7\x0f7\x93d\x9a\xa1}\x14\x02dH\x9e\x01\x13',
+        'expiry': '2017-09-25T23:36:22.056Z',
     }
     token = get_token_from_response(test_response)
     assert token == expected_token
