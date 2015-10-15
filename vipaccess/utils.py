@@ -205,7 +205,7 @@ def get_token_from_response(response_xml):
                 namespaces=namespace
                 )[0].text
             )
-	token['expiry'] = expiry.text
+        token['expiry'] = expiry.text
 
         return token
 
