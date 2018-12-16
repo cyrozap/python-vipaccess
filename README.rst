@@ -1,6 +1,9 @@
 python-vipaccess
 ================
 
+**WARNING: THIS REPOSITORY IS NO LONGER MAINTAINED!** Please use the fork at
+https://github.com/dlenski/python-vipaccess instead.
+
 |PyPI| |License| |Build Status| |Coverage Status|
 
 python-vipaccess is a free and open source software (FOSS)
