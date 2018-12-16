@@ -2,7 +2,7 @@ Deprecation Notice
 ==================
 
 This repository is no longer maintained. Please use the fork by
-@dlenski: https://github.com/dlenski/python-vipaccess
+`@dlenski`_: https://github.com/dlenski/python-vipaccess
 
 python-vipaccess
 ================
@@ -61,6 +61,7 @@ Usage
 
 Execute ``vipaccess`` (it should be in your ``PATH``).
 
+.. _@dlenski: https://github.com/dlenski
 .. |PyPI| image:: https://img.shields.io/pypi/v/python-vipaccess.svg
    :target: https://pypi.python.org/pypi/python-vipaccess
 .. |License| image:: https://img.shields.io/pypi/l/python-vipaccess.svg
